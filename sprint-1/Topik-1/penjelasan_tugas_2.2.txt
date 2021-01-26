@@ -1,4 +1,0 @@
-tugas 2.2
-which menampilkan lokasi executable php berada
-disitu menjelaskan bahwa lokasi penyimpanan php berada didalam direktori root (system) 
-kemudian masuk ke direktori usr kemudian masuk ke direktori bin kemudian masuk ke direktori php
