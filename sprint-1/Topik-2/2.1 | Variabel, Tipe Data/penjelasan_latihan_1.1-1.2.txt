@@ -1,0 +1,78 @@
+LATIHAN 1.1
+
+    pada baris 1 sampai 6 untuk mendeklarasikan atau membuat variabel
+    $a sampai $f berserta memberi nilai
+
+    var_dump() = syntax php yang digunakan untuk menampilkan type data
+    dan menampilkan isi data.
+
+    var_dump($d+$e);
+    output => int(5)
+
+    "type data pada $d adalah int dan untuk $e adalah string namun ketika
+    dijumlahkan menghasilkan nilai lima padahal type data berbeda. 
+    Dalam php selama karakter yang dimiliki sama makan type data akan dianggap sama juga
+    seperti contoh diatas nilai $d adalah int dan $e adalah string namun disini nilai 
+    $e adalah '2' yang artinya dia string '2', ketika $d dan $e dijumlahkan maka nilai 
+    $e akan dianggap sama dengan nilai $d dan menghasilkan nilai int(5)"
+
+        var_dump($e == $f)
+        output => bool(true)
+
+    "nilai $e dibandingkan nilai $f yang memiliki nilai karakter yang sama maka
+    akan menampilkan bool(true)"
+
+        var_dump($e === $f)
+        output => bool(false)
+
+    "nilai $e dibandingkan nilai $f dimana yang dibandingkan karakter dan type datanya
+    karena type data $e dan $f berbeda maka menghasilkan bool(false)"
+
+        var_dump($g)
+        output => PHP Notice: Undefined variable: g in php shell code
+                  Null
+        
+    "output pertama menampilkan noitce karena variabel g belum dibuat atau didefinisikan
+    untuk output kedua menampilkan nilai null karena variabel g belum didefinisikan maka secara
+    default akan bernilai null"
+
+        var_dump((bool)$g)
+        output => PHP Notice: Undefined variable: g in php shell code
+                  bool(false)
+
+    "output pertama menampilkan noitce karena variabel g belum dibuat atau didefinisikan
+    untuk output kedua menampilkan nilai false karena variabel g belum didefinisikan maka secara
+    default akan bernilai null dan null dalam boolean adalah false"
+
+        var_dump((int)$g)
+        output => PHP Notice: Undefined variable: g in php shell code
+                  int(0)
+
+    "output pertama menampilkan noitce karena variabel g belum dibuat atau didefinisikan
+    untuk output kedua menampilkan nilai 0 karena variabel g belum didefinisikan maka secara
+    default akan bernilai null dan null dalam int adalah 0"
+
+LATIHAN 1.2
+
+        var_dump(true && false)
+        output => bool(false)
+    "nilai true dibandingkan false akan menghasilkan false 
+    karena && akan bernilai true ketika semua nilai true"
+
+        var_dump(true || false)
+        output => bool(true)
+
+    "nilai true dibandingkan nilai false akan menghasilkan
+    true karena || akan bernilai false ketika semua nilai false"
+
+        var_dump(false || false)
+        output => bool(false)
+
+    "nilai true dibandingkan nilai false akan menghasilkan false 
+    karena || akan bernilai false ketika semua nilai false"
+
+        var_dump(!false)
+        output => bool(true)
+
+    "fungsi ! adalah membalikan(negasi) nilai, jadi ketika nilai false dibalik maka
+    akan menampilkan nilai true"
