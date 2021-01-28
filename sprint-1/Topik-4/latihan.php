@@ -52,11 +52,7 @@ for ($i=count($nilai)-1; $i >= 0; $i--) {
     if (count($highest)==3) {
         break;
     }
-    // if (count($highest)>3 || array_search($nilai[$i], $highest)) {
-    //     # code...
-    // }
 }
 foreach ($highest as $key => $value) {
     echo "Highest index ke-".$key." : ".$value."\n";
 }
-// print_r($highest);
