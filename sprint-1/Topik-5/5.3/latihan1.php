@@ -95,35 +95,43 @@ function palingmuda($students)
     return $urutan[array_key_first($urutan)];
 }
 
-echo "||== DAFTAR SANTRI PER NOMOR INDUK ==|| <br>";
+echo "||== DAFTAR SANTRI PER NOMOR INDUK ==|| <br><br>";
 
 // print_r(sort_array($students, 'id'));
 $sort = sort_array($students, 'id');
 foreach($sort as $key => $value){
     echo "[$key]";
     foreach ($value as $k => $val) {
-    echo " $k => $value ";
+    echo " $k => $val ";
     }
     echo "<br>";
 }
 
-echo "<br>||== DAFTAR SANTRI PER NAMA ==|| <br>";
+echo "<br>||== DAFTAR SANTRI PER NAMA ==|| <br><br>";
 
 // print_r(sort_array($students, 'name'));
 $sort = sort_array($students, 'name');
 foreach($sort as $key => $value){
     echo "[$key]";
     foreach ($value as $k => $val) {
-    echo " $k => $value ";
+    echo " $k => $val ";
     }
     echo "<br>";
 }
 
-echo "||== DAFTAR SANTRI BERDASARKAN DIVISION PHP BACKEND ==|| <br>";
+echo "<br>||== DAFTAR SANTRI BERDASARKAN DIVISION PHP BACKEND ==|| <br><br>";
 
-print_r(search_divisi($students, 'division', 'PHP Backend'));
+// print_r(search_divisi($students, 'division', 'PHP Backend'));
+$sort = search_divisi($students, 'division', 'PHP Backend');
+foreach($sort as $key => $value){
+    echo "[$key]";
+    foreach ($value as $k => $val) {
+    echo " $k => $val ";
+    }
+    echo "<br>";
+}
 
-echo "||== JUMAH SANTRI UMUR SANTRI KURANG DARI 25 ==|| <br><br>";
+echo "<br>||== JUMAH SANTRI UMUR SANTRI KURANG DARI 25 ==|| <br><br>";
 
 echo "Ada " . search_age($students, 'age', '25') . " santri yang berumur kurang dari 25. <br><br>";
 
