@@ -70,6 +70,7 @@ function search_age($students, $jenis, $cari)
     $urutan = [];
     foreach ($students as $key => $value) {
         if ($value[$jenis] < $cari) {
+            $urutan[] = $value;
         }
     }
     return count($urutan);
