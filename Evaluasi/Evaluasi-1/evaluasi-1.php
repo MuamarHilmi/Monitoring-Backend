@@ -86,7 +86,7 @@ while (true) {
     $x++;
 }
 for ($i = 0; $i < count($nama); $i++) {
-    $data[] = [
+    $file[] = [
         'name' => $nama[$i],
         'nik'  => $nik[$i],
         'jurusan' => $jurusan[$i],
@@ -94,10 +94,10 @@ for ($i = 0; $i < count($nama); $i++) {
         'usia' => $usia[$i],
     ];
 }
-print_r($data);
+print_r($file);
 $n = 1;
 echo "Yang minat sebagai Backend: \n";
-foreach ($data as $key => $value) {
+foreach ($file as $key => $value) {
     if ($value['divisi']=='backend') {
         echo $n . ". ". $value['name']. "\n";
     }
@@ -105,7 +105,7 @@ foreach ($data as $key => $value) {
 }
 echo "Yang yang kurang dari 25: \n";
 $i = 1;
-foreach ($data as $key => $value) {
+foreach ($file as $key => $value) {
     if ($value['usia'] < 25) {
         echo $i . ". ". $value['name']." usia " . $value['usia'] ."\n";
     }
@@ -113,9 +113,9 @@ foreach ($data as $key => $value) {
 }
 echo "Yang paling muda adalah";
 
-foreach ($data as $key => $value) {
+foreach ($file as $key => $value) {
     $muda = [];
-    $muda[$data[$key]['usia']]=$value;
+    $muda[$file [$key]['usia']]=$value;
 }
 ksort($muda);
 $new []= array_key_first($muda);

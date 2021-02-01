@@ -1,4 +1,4 @@
 <?php
-
-echo "hello <br>";
-echo "world <br>";
+echo "Dari mana anda berasl: ";
+$asal = trim(fgets(STDIN));
+echo "Oh, dari $asal ya\n";
