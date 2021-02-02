@@ -1,4 +1,4 @@
 <?php
-echo "Dari mana anda berasl: ";
-$asal = trim(fgets(STDIN));
-echo "Oh, dari $asal ya\n";
+$nilai = sqrt(64);  // returns 8
+echo $nilai;
+?> 
