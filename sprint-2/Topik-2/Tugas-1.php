@@ -123,8 +123,3 @@ KELILING = " . Trapesium::Keliling($a_atas, $a_bawah, $tinggi);
             break;
     }
 }
-// $panjang = trim(fgets(STDIN));
-// $lebar = trim(fgets(STDIN));
-
-// $luas = Persegi_panjang::Luas($panjang, $lebar);
-// $keliling = Persegi_panjang::Keliling($panjang, $lebar);
