@@ -33,12 +33,12 @@ class Siswa
                 self::Hapus();
                 break;
 
-                // case 4:
-                //     self::();
-                //     break;
+            case 4:
+                self::Lihat();
+                break;
 
             default:
-                echo "\nMENU TIDAK DITEMUKAN";
+                echo "\nMENU TIDAK DITEMUKAN\n\n";
                 new Siswa;
                 break;
         }
@@ -63,13 +63,7 @@ class Siswa
                 'asal' => $asal,
             );
         }
-        echo "\nKembali menu awal? (y/n)";
-        self::$confrim = trim(fgets(STDIN));
-        if (self::$confrim == 'n') {
-            die;
-        } else {
-            new Siswa;
-        }
+        self::Lihat();
     }
 
     public static function Ubah()
@@ -112,18 +106,12 @@ class Siswa
                     break;
 
                 default:
-                    echo "\nMENU TIDAK DIEMUKAN!";
+                    echo "\nMENU TIDAK DIEMUKAN!\n\n";
                     Siswa::Ubah();
                     break;
             }
             // print_r(self::$Santri);
-            echo "\nKembali menu awal? (y/n)";
-            self::$confrim = trim(fgets(STDIN));
-            if (self::$confrim == 'n') {
-                die;
-            } else {
-                new Siswa;
-            }
+            self::Lihat();
         }
     }
 
@@ -144,15 +132,25 @@ class Siswa
             }
             echo "\nPilih santri: ";
             $pilih = trim(fgets(STDIN));
-            unset(self::$Santri[$pilih-1]);
-            // print_r(self::$Santri);
-            echo "\nKembali menu awal? (y/n)";
-            self::$confrim = trim(fgets(STDIN));
-            if (self::$confrim == 'n') {
-                die;
-            } else {
-                new Siswa;
-            }
+            unset(self::$Santri[$pilih - 1]);
+
+            self::Lihat();
+        }
+    }
+
+    public static function Lihat()
+    {
+        echo "\n|| Data Santri ||\n\n";
+        $i = 1;
+        foreach (self::$Santri as $key => $value) {
+            echo $i . " (NIK: " . $value['nik'] . ") " . $value['nama'] . " dari " . $value['asal'] . "\n";
+        }
+        echo "\nKembali menu awal? (y/n)";
+        self::$confrim = trim(fgets(STDIN));
+        if (self::$confrim == 'n') {
+            die;
+        } else {
+            new Siswa;
         }
     }
 }
