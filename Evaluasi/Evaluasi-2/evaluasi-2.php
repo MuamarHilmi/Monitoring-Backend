@@ -13,9 +13,9 @@ class Siswa
         echo "\nMenu\n";
         echo "------\n";
         echo "1. Tambah Data Santri\n";
-        echo "1. Ubah Data Santri\n";
-        echo "1. Hapus Data Santri\n";
-        echo "1. Lihat Data Santri\n";
+        echo "2. Ubah Data Santri\n";
+        echo "3. Hapus Data Santri\n";
+        echo "4. Lihat Data Santri\n";
 
         echo "\nPilih Menu:";
         self::$menu = trim(fgets(STDIN));
@@ -39,6 +39,7 @@ class Siswa
 
             default:
                 echo "\nMENU TIDAK DITEMUKAN";
+                new Siswa;
                 break;
         }
     }
@@ -84,6 +85,7 @@ class Siswa
             $i = 1;
             foreach (self::$Santri as $key => $value) {
                 echo $i . ". (NIK: " . $value['nik'] . ") " . $value['nama'] . " dari " . $value['asal'] . "\n";
+                $i++;
             }
             echo "\nPilih santri: ";
             $pilih = trim(fgets(STDIN));
@@ -96,28 +98,62 @@ class Siswa
                 case 1:
                     echo "\nNama baru: ";
                     $nm_baru = trim(fgets(STDIN));
-                    self::$Santri[$pilih]['nama']=$nm_baru;
+                    self::$Santri[$pilih - 1]['nama'] = $nm_baru;
                     break;
                 case 2:
                     echo "\nNIK baru: ";
                     $nik_baru = trim(fgets(STDIN));
-                    self::$Santri[$pilih]['nik']=$nik_baru;
+                    self::$Santri[$pilih - 1]['nik'] = $nik_baru;
                     break;
                 case 3:
                     echo "\nAsal baru: ";
                     $asl_baru = trim(fgets(STDIN));
-                    self::$Santri[$pilih]['asal']=$asl_baru;
+                    self::$Santri[$pilih - 1]['asal'] = $asl_baru;
                     break;
 
                 default:
                     echo "\nMENU TIDAK DIEMUKAN!";
+                    Siswa::Ubah();
                     break;
+            }
+            // print_r(self::$Santri);
+            echo "\nKembali menu awal? (y/n)";
+            self::$confrim = trim(fgets(STDIN));
+            if (self::$confrim == 'n') {
+                die;
+            } else {
+                new Siswa;
             }
         }
     }
 
     public static function Hapus()
     {
+        if (empty(self::$Santri)) {
+            echo "ERROR: Tidak dapat melakukan perubahan karna tidak ada data santri!";
+            echo "\nTambah Santri? (y/n)";
+            self::$confrim = trim(fgets(STDIN));
+            (self::$confrim == 'n') ? die : self::Tambah();
+        } else {
+            echo "\n|| Hapus Data Santri ||\n";
+            echo "\n|-> Data Santri\n\n";
+            $i = 1;
+            foreach (self::$Santri as $key => $value) {
+                echo $i . ". (NIK: " . $value['nik'] . ") " . $value['nama'] . " dari " . $value['asal'] . "\n";
+                $i++;
+            }
+            echo "\nPilih santri: ";
+            $pilih = trim(fgets(STDIN));
+            unset(self::$Santri[$pilih-1]);
+            // print_r(self::$Santri);
+            echo "\nKembali menu awal? (y/n)";
+            self::$confrim = trim(fgets(STDIN));
+            if (self::$confrim == 'n') {
+                die;
+            } else {
+                new Siswa;
+            }
+        }
     }
 }
 
