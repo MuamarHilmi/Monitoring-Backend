@@ -144,6 +144,7 @@ class Siswa
         $i = 1;
         foreach (self::$Santri as $key => $value) {
             echo $i . " (NIK: " . $value['nik'] . ") " . $value['nama'] . " dari " . $value['asal'] . "\n";
+            $i++;
         }
         echo "\nKembali menu awal? (y/n)";
         self::$confrim = trim(fgets(STDIN));
