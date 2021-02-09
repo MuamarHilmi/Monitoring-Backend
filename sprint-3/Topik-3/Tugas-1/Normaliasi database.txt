@@ -1,0 +1,5 @@
+1NF : tahap memecah nilai atribut tabel yang masih  dalam benuk grub ke dalam bentuk tunggal. tabel dikatakan 1NF kalau setiap atribut dalam tabel memiliki nilai tunggal.
+
+2NF : tahap memecah nilai atribut tabel berdasarkan jenis tabel atau berdasarkan primary key.
+
+3NF : tahap memecah nilai atribut tabel suatu atribut yang tidak bergantung pada primary key tapi bergantung pada field yang lain maka atribut-atribut tersebut perlu dipisah ke tabel baru.
