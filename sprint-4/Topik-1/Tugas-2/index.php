@@ -39,6 +39,7 @@ $database = new Database();
             <form action="" method="post">
                 <?php
                 $data = $database->readAll();
+                print_r($data);
                 $i = 1;
                 foreach ($data as $val) :
                 ?>

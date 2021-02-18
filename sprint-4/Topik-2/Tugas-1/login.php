@@ -1,3 +1,9 @@
+<?php
+if (isset($_COOKIE['user'])) {
+    header("location: index.php");
+} else {
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,3 +69,5 @@
 </div>
 </body>
 </html>
+
+<?php } ?>
