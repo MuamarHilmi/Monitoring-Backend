@@ -1,4 +1,6 @@
 <?php
+    session_start();
+print_r($_SESSION['user']);
 if (isset($_SESSION['user'])) {
     header("location: index.php");
 } else {
@@ -45,7 +47,6 @@ if (isset($_SESSION['user'])) {
         <input type="submit" name="login" value="Masuk" id="">
     </form>
     <?php
-    session_start();
         if (isset($_POST['login'])) {
             // echo "login";
             if (empty($_POST['user']) && empty($_POST['pass'])) {
