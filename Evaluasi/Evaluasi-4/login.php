@@ -36,10 +36,12 @@ if (isset($_SESSION['user'])) {
             height: 250px;
             width: 300px;
         }
-        input{
+
+        input {
             margin-bottom: 10px;
         }
-        form{
+
+        form {
             height: auto;
             width: auto;
             display: flex;
@@ -50,7 +52,6 @@ if (isset($_SESSION['user'])) {
     </style>
 
     <body>
-        <div class="title"></div>
         <div class="login">
             <h2>Login</h2>
             <form action="" method="post">
@@ -60,17 +61,25 @@ if (isset($_SESSION['user'])) {
             </form>
             <?php
             if (isset($_POST['btn_login'])) {
-                if (empty($_POST['user'])||empty($_POST['pass'])) {
+                if (empty($_POST['user']) || empty($_POST['pass'])) {
                     echo "<script>alert('Data Tidak Boleh Ada yang Kosong!')</script>";
                 } else {
+                    // echo "login";
                     $user = $_POST['user'];
                     $pass = $_POST['pass'];
-                    include('read.php');
+                    include("database/database.php");
                     $read = new Read;
                     $data = $read->login($user,$pass);
-                    print_r($data);
+                    // print_r($data);
+                    if (empty($data)) {
+                        ?><script>alert("Login Gagal!\nPeriksa Username dan Password anda!")</script><?php
+                    } else {
+                        $_SESSION['user']=$data;
+                        header("location: index.php");
+                        // echo "berhasil";
+                    }
+
                 }
-                
             }
             ?>
             <p>Sudah punya akun? <a href="daftar.php" style="font-weight: bold; color:blue">Daftar</a></p>

@@ -20,7 +20,7 @@ class Database
     {
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function execute($query)
     {
@@ -28,3 +28,7 @@ class Database
         $stmt->execute();
     }
 }
+include('insert.php');
+include('read.php');
+// $data = new Database;
+// print_r($data->read("select * from tb_akun where username='ilahana'"));

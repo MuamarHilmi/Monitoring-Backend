@@ -70,7 +70,7 @@ if (isset($_SESSION['user'])) {
                         $user = $_POST['user'];
                         $pass = $_POST['pass'];
                         $nama = $_POST['nama'];
-                        include('insert.php');
+                        include('database/database.php');
                         $insert = new Insert;
                         $insert->daftar($user,$pass,$nama);
                         echo "<script>alert('Berhasil Mendaftar, Ulangi Login!')</script>";
